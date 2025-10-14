@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+class duplicateRemover{
+    string str; 
+    public: 
+        void setData(){
+            getline(cin, str);
+        }
+
+        void removeduplicate(){
+            for (int i = 0; i < str.length(); i++)
+            {
+                for (int j = i+1; j < str.length(); j++)
+                {
+                    if(str[i] == str[j]){
+                        for (int k = j; k < str.length()-1; k++)
+                        {
+                            str[k] = str[k+1];
+                        }
+                        str.pop_back();
+                        j--;
+                    }
+                }
+                
+            }
+            
+        }
+
+        void display(){
+            cout << str << endl;
+        }
+};
+
+int main(){
+    duplicateRemover obj; 
+    obj.setData();
+    obj.removeduplicate();
+    obj.display(); 
+    return 0;
+}
