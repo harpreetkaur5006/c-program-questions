@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int verifyPrime(int n) {
+    if (n <= 1)
+        return 0;
+    if (n == 2 || n == 3)
+        return 1;
+    if (n % 2 == 0 || n % 3 == 0)
+        return 0;
+    for (int i = 5; (long long)i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0)
+            return 0;
+    }
+    return 1;
+}
+int main()
+{
+  int T, no;
+  cin>>T;
+  while(T--)
+  {
+    cin>>no;
+    if (verifyPrime(no))
+      cout<<"PRIME"<<endl; 
+    else 
+      cout<<"NOT PRIME"<<endl; 
+  }
+  return 0;
+}
