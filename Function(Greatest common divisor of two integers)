@@ -15,7 +15,6 @@ int gcd(int i, int j){
         i = temp;
     }
     return i;
-  // Write your code here
 }
 int main(){
   int i, j;
