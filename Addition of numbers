@@ -1,0 +1,38 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+// write the overloaded sum() functions for 2, 3 and 4 arguments
+int sum(int a, int b) {
+    return a + b;
+}
+// Function to add 3 numbers
+int sum(int a, int b, int c) {
+    return a + b + c;
+}
+// Function to add 4 numbers
+int sum(int a, int b, int c, int d) {
+    return a + b + c + d;
+}
+int main()
+{
+  int n,a,b,c,d;
+  cin>>n;
+  if(n==2)
+  {
+    cin>>a>>b;
+    cout<<sum(a,b);
+  }
+  else if(n==3)
+  {
+    cin>>a>>b>>c;
+    cout<<sum(a,b,c);
+  }
+  else
+  {
+    cin>>a>>b>>c>>d;
+    cout<<sum(a,b,c,d);
+  }
+  // Return 0 to indicate normal termination
+  return 0;
+}
