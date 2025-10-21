@@ -16,3 +16,14 @@ int binaryToDecimal(char binary[]) {
     }
     return decimal;
 }
+int main(){
+    int T;
+    char no[32];
+    scanf("%d",&T);
+    while(T--){
+        scanf("%s",no);
+        printf("%d\n",binaryToDecimal(no));
+    }
+     return 0;
+}
+
