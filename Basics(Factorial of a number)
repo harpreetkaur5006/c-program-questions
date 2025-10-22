@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <math.h>
+long fact(int n) {
+ long factorial = 1;
+    for(int i=n;i>=1;i--){
+       factorial *= i;
+    }
+  return factorial;
+}
+int main()
+{
+   int n;
+   scanf("%d",&n);
+   printf("%ld", fact(n));
+}
