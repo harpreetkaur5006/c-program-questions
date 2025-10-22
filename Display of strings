@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+#include<string>
+using namespace std;
+// Write overloaded display(string a) and display(string a, string b) functions
+void display(string a){
+    cout<<a<<endl;
+}
+void display(string a,string b){
+    cout<<a<<"-"<<b<<endl;
+}
+int main()
+{
+  int n;
+  string a,b;
+  cin>>n;
+  if(n==1)
+  {
+    cin>>a;
+    display(a);
+  }
+  else
+  {
+    cin>>a;
+    cin>>b;
+    display(a,b);
+  }
+  return 0;
+}
