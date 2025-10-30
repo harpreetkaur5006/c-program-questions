@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cstdio>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+class calculate{
+    private:
+        float p;
+        float r;
+        float t;
+    public:
+    void get(){
+        cin>>p>>r>>t;
+    }
+    void display(){
+        cout<<fixed<<setprecision(1);
+        float ci=p*(pow(1+r/100,t));
+        cout<<ci;
+    }
+    };
+int main()
+{
+    calculate amount;
+    amount.get();
+    amount.display();
+    // Write your code here
+    return 0;
+}
