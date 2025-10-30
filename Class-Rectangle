@@ -1,0 +1,59 @@
+#include<iostream>
+#include<cstdio>
+#include<sstream>
+#include<string>
+// Include headers as needed
+using namespace std;
+class Rectangle
+{
+  int x,y,w,h;
+  public:
+  Rectangle(int X ,int Y,int W,int H){
+  x=X;
+  y=Y;
+  w=W;
+  h=H;
+  }
+  int getHeight(){
+    return h;
+  }
+  int getWidth(){
+    return w;
+  }
+  int getX(){
+    return x;
+  }
+  int getY(){
+    return y;
+  }
+  string toString(){
+  return "Rectangle[x="+to_string(x)+",y="+to_string(y)+",width="+to_string(w)+",height="+to_string(h)+"]";
+  }
+  };
+int main()
+{
+  Rectangle r1(5,2,7,3);
+  Rectangle r2(13,27,2,42);
+  Rectangle r3(2,3,4,5);
+
+  cout<<r1.getX()<<endl;
+  cout<<r1.getY()<<endl;
+  cout<<r1.getWidth()<<endl;
+  cout<<r1.getHeight()<<endl;
+  cout<<r1.toString()<<endl;
+
+  cout<<r2.getX()<<endl;
+  cout<<r2.getY()<<endl;
+  cout<<r2.getWidth()<<endl;
+  cout<<r2.getHeight()<<endl;
+  cout<<r2.toString()<<endl;
+
+  cout<<r3.getX()<<endl;
+  cout<<r3.getY()<<endl;
+  cout<<r3.getWidth()<<endl;
+  cout<<r3.getHeight()<<endl;
+  cout<<r3.toString();
+
+  return 0;
+
+}
