@@ -1,0 +1,58 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+class TimeSpan
+{
+  int m,h;
+  public:
+  TimeSpan(int hours,int minutes){
+    m=minutes;
+    h=hours;
+  }
+int getHours(){
+  return h;
+}
+  int getMinutes(){
+    return m;
+  }
+  int add(int hours,int minutes){
+    h+=hours;
+    m+=minutes;
+    h+=m/60;
+    m%=60;
+  }
+  int add(TimeSpan tp){
+    h+=tp.h;
+    m+=tp.m;
+    h+=m/60;
+    m%=60;
+  }
+  float getTotalHours(){
+    return h+m/60.0;
+  }
+  string toString(){
+    return ""+to_string(h)+" Hours, "+to_string(m)+" Minutes";
+  }
+};
+int main()
+{
+  int a1,a2,a3,a4,a5,a6;
+  cin>>a1>>a2>>a3>>a4>>a5>>a6;
+  TimeSpan t1(a1,a2);
+  TimeSpan t2(a3,a4);
+  cout<<t1.getHours()<<endl;
+  cout<<t1.getMinutes()<<endl;
+  cout<<t1.toString()<<endl;
+  t1.add(a5,a6);
+
+  cout<<t1.getHours()<<endl;
+  cout<<t1.getMinutes()<<endl;
+  t1.add(t2);
+
+  cout<<t1.getHours()<<endl;
+  cout<<t1.getMinutes()<<endl;
+  cout<<t1.getTotalHours();
+
+  return 0;
+}
