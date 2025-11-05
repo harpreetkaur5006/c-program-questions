@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+// Include headers as needed
+class TollBooth{
+    int car;
+    int total;
+    public:
+    TollBooth(){
+        car=0;
+        total=0;
+    }
+    void payingCar(){
+        car++;
+        total+=50;
+    }
+    void nopayCar(){
+        car++;
+    }
+    void display(){
+        cout<<"Total Cash : "<<total<<"/-"<<endl<<"Total Cars : "<<car;
+    }
+};
+using namespace std;
+int main()
+{
+    // Write your code here
+TollBooth booth;
+    char c;
+    while(true){
+        cin>>c;
+        if (c=='p')
+            booth.payingCar();
+        else if(c=='n')
+            booth.nopayCar();
+        else if(c=='q'){
+            booth.display();
+        break;
+        }
+    }
+    // Return 0 to indicate normal termination
+    return 0;
+}
