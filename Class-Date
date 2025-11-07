@@ -1,0 +1,92 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+class Date
+{
+    private: 
+    int m,d;
+    public:
+    Date(int m, int d)
+    {
+        this-> m=m;
+        this-> d=d;
+    }
+    int daysInMonth()
+    {
+        if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12)
+           return 31;
+        else if (m==2)
+        {
+           return 28;
+        }
+        else 
+        {
+            return 30;
+        }
+    }
+    int getDay()
+    {
+        return d;
+    }
+    int getMonth()
+    {
+        return m;
+    }
+    void nextDay() {
+        d++;
+        if (d > daysInMonth()) { // If day exceeds the number of days in the current month
+            d = 1;              // Reset day to 1
+            m++;                // Move to the next month
+            if (m > 12) {       // If month exceeds December, wrap to January
+                m = 1;
+            }
+        }
+    }
+    string toString(){
+      return to_string(getMonth())+"/"+to_string(getDay());
+    }
+    int absoluteDay()
+    {
+        switch (m){
+            case 1: return d;
+                break;
+            case 2: return d+31;
+                break;
+            case 3: return d+31+28;
+             break;
+                case 4: return d+31+28+31;
+                 break;
+                case 5: return d+31+28+31+30;
+             break;    
+            case 6: return d+31+28+31+30+31;
+             break;
+            case 7: return d+31+28+31+30+31+30;
+             break;   
+            case 8: return d+31+28+31+30+31+30+31;
+             break;
+            case 9: return d+31+28+31+30+31+30+31+31;
+             break;
+            case 10: return d+31+28+31+30+31+30+31+31+30;
+             break;
+            case 11: return d+31+28+31+30+31+30+31+31+30+31;
+             break;    
+            case 12: return d+31+28+31+30+31+30+31+31+30+31+30;
+         break;
+        }
+    }
+};
+int main()
+{
+  int a,b;
+  cin>>a>>b;
+  Date d(a,b);
+  cout<<d.absoluteDay()<<endl;
+  cout<<d.daysInMonth()<<endl;
+  cout<<d.getDay()<<endl;
+  cout<<d.getMonth()<<endl;
+  d.nextDay();
+  cout<<d.getDay()<<endl;
+  cout<<d.getMonth()<<endl;
+  cout<<d.toString();
+}
