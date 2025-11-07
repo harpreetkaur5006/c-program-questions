@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+// Include headers as needed
+using namespace std;
+class SafeArray{
+  //Complete the class definition
+    static const int LIMIT = 20; // fixed maximum size
+    int arr[LIMIT];              // fixed-size array required by the problem
+    int size;                    // actual usable size (<= LIMIT)
+public:
+    // keep constructor signature SafeArray(int) so SafeArray sa(20) works
+    SafeArray(int s = LIMIT) {
+        if (s <= 0) s = LIMIT;
+        size = (s > LIMIT ? LIMIT : s);
+        for (int i = 0; i < LIMIT; ++i) arr[i] = 0; // initialize
+    }
+    // keep the function name exactly as you required
+    void putElement(int index, int value) {
+        if (index >= 0 && index < size) {
+            arr[index] = value;
+        }
+        // do nothing if out of bounds
+    }
+    // keep the function name exactly as you required
+    int getElement(int index) {
+        if (index >= 0 && index < size) {
+            return arr[index];
+        }
+        return -1; // signal for out of bounds
+    }
+};
+int main(){
+      int n;
+      cin>>n;
+      SafeArray sa(20);
+      while(n--){
+      int number,index;
+      cin>>number>>index;
+      sa.putElement(index,number);
+      int x = sa.getElement(index);
+      if(x != -1){
+        cout<<x<<endl;
+      }else{
+        cout<<"Out of Bounds"<<endl;
+      }
+    }
+    return 0;
+}
