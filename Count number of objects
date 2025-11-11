@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+int cnt=0;    // manipluate this variable in your code
+class Counter
+{ 
+  public: 
+        Counter() {
+        cnt++;   // increase when object is created
+    }
+    ~Counter() {
+        cnt--;   // decrease when object is destroyed
+    }
+};
+int main()
+{
+  Counter c1,c2;
+  cout<<cnt;
+  {
+    Counter c3,c4;
+    cout<<cnt;
+  }
+    cout<<cnt;
+  // Return 0 to indicate normal termination
+  return 0;
+}
