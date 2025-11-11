@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+// Include headers as needed
+using namespace std;
+class Box {
+private:
+    int length, breadth, height;   // private dimensions
+public:
+    // Default constructor
+    Box() {
+        length = 0;
+        breadth = 0;
+        height = 0;
+    }
+    // Parameterized constructor
+    Box(int l, int b, int h) {
+        length = l;
+        breadth = b;
+        height = h;
+    }
+    // Copy constructor
+    Box(const Box &b1) {
+        length = b1.length;
+        breadth = b1.breadth;
+        height = b1.height;
+    }
+    // Getter functions
+    int getLength() { return length; }
+    int getBreadth() { return breadth; }
+    int getHeight() { return height; }
+    // Calculate volume
+    long long CalculateVolume() {
+        return (long long)length * breadth * height;
+    }
+};
+int main()
+{
+  int l,b,h;
+  Box b1;
+  cin>>l>>b>>h;
+  Box b2(l,b,h);
+  Box b3(b2);
+  cout<<b1.getLength()<<" "<<b1.getBreadth()<<" "<<b1.getHeight()<<" "<<b1.CalculateVolume()<<endl;
+  cout<<b2.getLength()<<" "<<b2.getBreadth()<<" "<<b2.getHeight()<<" "<<b2.CalculateVolume()<<endl;
+  cout<<b3.getLength()<<" "<<b3.getBreadth()<<" "<<b3.getHeight()<<" "<<b3.CalculateVolume();
+  // Return 0 to indicate normal termination
+  return 0;
+}
